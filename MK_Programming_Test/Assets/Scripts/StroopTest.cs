@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -105,5 +106,18 @@ public class StroopTest : MonoBehaviour
         {
             endScreen.SetActive(true);
         }
+    }
+
+    public void Restart()
+    {
+        endScreen.SetActive(false);
+        score.ResetScore();
+        questionNumber = 0;
+        GenerateNewTest();
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

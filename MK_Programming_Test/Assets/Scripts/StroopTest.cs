@@ -87,6 +87,7 @@ public class StroopTest : MonoBehaviour
             index = Random.Range(0, questionColours.Count);
         }
         testWord.text = questionColours[index].name;
+        score.NewQuestion();
         score.SetQuestionActive(true);
     }
 

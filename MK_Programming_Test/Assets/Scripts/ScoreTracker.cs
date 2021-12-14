@@ -58,4 +58,14 @@ public class ScoreTracker : MonoBehaviour
             }
         }
     }
+
+    public int GetAnswers()
+    {
+        return correctAnswers;
+    }
+
+    public int GetScore()
+    {
+        return timeScore;
+    }
 }

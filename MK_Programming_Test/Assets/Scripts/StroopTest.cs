@@ -11,6 +11,8 @@ public class StroopTest : MonoBehaviour
     public TMP_Text testWord;
     public Button[] options;
     public GameObject endScreen;
+    public TMP_Text correctAnswersText;
+    public TMP_Text scoreText;
 
     [SerializeField]
     int questionCount;
@@ -80,7 +82,7 @@ public class StroopTest : MonoBehaviour
         correctColour = questionColours[Random.Range(0, questionColours.Count)];
         testWord.color = correctColour.colour;
         int index = Random.Range(0, questionColours.Count);
-        while(colourOptions[index].name == correctColour.name)
+        while(questionColours[index].name == correctColour.name)
         {
             index = Random.Range(0, questionColours.Count);
         }
@@ -105,6 +107,8 @@ public class StroopTest : MonoBehaviour
         else
         {
             endScreen.SetActive(true);
+            correctAnswersText.text = "Answers: " + score.GetAnswers() + "/" + questionCount;
+            scoreText.text = "Score: " + score.GetScore();
         }
     }
 
